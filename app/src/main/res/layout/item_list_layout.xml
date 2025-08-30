@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="12dp"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="6dp"
+    app:cardUseCompatPadding="true"
+    android:backgroundTint="@android:color/white">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/imageView_PlanetImage"
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:scaleType="centerCrop"
+            android:contentDescription="@string/app_name"
+            app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Full"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:src="@drawable/default_image" />
+
+        <TextView
+            android:id="@+id/textView_PlantName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="Planet Name"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:textColor="?android:textColorPrimary"
+            app:layout_constraintStart_toEndOf="@id/imageView_PlanetImage"
+            app:layout_constraintTop_toTopOf="@id/imageView_PlanetImage"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="Jupiter" />
+
+        <TextView
+            android:id="@+id/textView_PlanetMoonCount"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="0 Moon"
+            android:textSize="15sp"
+            android:textColor="?android:textColorSecondary"
+            app:layout_constraintStart_toEndOf="@id/imageView_PlanetImage"
+            app:layout_constraintTop_toBottomOf="@id/textView_PlantName"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="79 Moons" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>
