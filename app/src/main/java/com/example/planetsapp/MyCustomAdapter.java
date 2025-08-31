@@ -32,7 +32,7 @@ public class MyCustomAdapter extends ArrayAdapter<Planet> {
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        Planet planet = getItem(position);
+        Planet planets = getItem(position);
         MyViewHolder myViewHolder;
         final View result;
 
@@ -45,8 +45,15 @@ public class MyCustomAdapter extends ArrayAdapter<Planet> {
             myViewHolder.planetImage = (ImageView) convertView.findViewById(R.id.imageView_PlanetImage);
 
             result = convertView;
+            convertView.setTag(myViewHolder);
+        } else {
+            myViewHolder = (MyViewHolder) convertView.getTag();
+            result = convertView;
         }
 
-        return null;
+        myViewHolder.planetName.setText(planets.getPlanetName());
+        myViewHolder.planetMoonCount.setText(planets.getMoonCount());
+        myViewHolder.planetImage.setImageResource(planets.getPlanetImage());
+        return result;
     }
 }
