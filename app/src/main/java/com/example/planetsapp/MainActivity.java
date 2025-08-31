@@ -1,6 +1,7 @@
 package com.example.planetsapp;
 
 import android.os.Bundle;
+import android.widget.ListView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,7 +9,10 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
+    private static MyCustomAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,5 +24,29 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        ListView listView = findViewById(R.id.listView);
+        ArrayList<Planet> planetArrayList = new ArrayList<>();
+
+        Planet Earth = new Planet("Earth", "1 Moon", R.drawable.earth);
+        Planet Mercury = new Planet("Mercury", "0 Moon", R.drawable.mercury);
+        Planet Venus = new Planet("Venus", "0 Moons", R.drawable.venus);
+        Planet Mars = new Planet("Mars", "2 Moons", R.drawable.mars);
+        Planet Jupiter = new Planet("Jupiter", "79 Moons", R.drawable.jupiter);
+        Planet Saturn = new Planet("Saturn", "83 Moons", R.drawable.saturn);
+        Planet Urnaus = new Planet("Urnaus", "27 Moons", R.drawable.uranus);
+        Planet Neptune = new Planet("Neptune", "14 Moons", R.drawable.neptune);
+
+        planetArrayList.add(Earth);
+        planetArrayList.add(Mercury);
+        planetArrayList.add(Venus);
+        planetArrayList.add(Mars);
+        planetArrayList.add(Jupiter);
+        planetArrayList.add(Saturn);
+        planetArrayList.add(Urnaus);
+        planetArrayList.add(Neptune);
+
+        adapter = new MyCustomAdapter(this, planetArrayList);
+        listView.setAdapter(adapter);
     }
 }

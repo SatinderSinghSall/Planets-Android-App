@@ -17,10 +17,10 @@ public class MyCustomAdapter extends ArrayAdapter<Planet> {
     private ArrayList<Planet> planetArrayList;
     Context context;
 
-    public MyCustomAdapter(@NonNull Context context, int resource, ArrayList<Planet> planetArrayList, Context context1) {
+    public MyCustomAdapter(@NonNull Context context, ArrayList<Planet> planetArrayList) {
         super(context, R.layout.item_list_layout, planetArrayList);
         this.planetArrayList = planetArrayList;
-        this.context = context1;
+        this.context = context;
     }
 
     private static class MyViewHolder {
