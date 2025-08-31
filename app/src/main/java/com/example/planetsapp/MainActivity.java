@@ -30,11 +30,11 @@ public class MainActivity extends AppCompatActivity {
 
         Planet Earth = new Planet("Earth", "1 Moon", R.drawable.earth);
         Planet Mercury = new Planet("Mercury", "0 Moon", R.drawable.mercury);
-        Planet Venus = new Planet("Venus", "0 Moons", R.drawable.venus);
+        Planet Venus = new Planet("Venus", "0 Moon", R.drawable.venus);
         Planet Mars = new Planet("Mars", "2 Moons", R.drawable.mars);
         Planet Jupiter = new Planet("Jupiter", "79 Moons", R.drawable.jupiter);
         Planet Saturn = new Planet("Saturn", "83 Moons", R.drawable.saturn);
-        Planet Urnaus = new Planet("Urnaus", "27 Moons", R.drawable.uranus);
+        Planet Uranus = new Planet("Uranus", "27 Moons", R.drawable.uranus);
         Planet Neptune = new Planet("Neptune", "14 Moons", R.drawable.neptune);
 
         planetArrayList.add(Earth);
@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         planetArrayList.add(Mars);
         planetArrayList.add(Jupiter);
         planetArrayList.add(Saturn);
-        planetArrayList.add(Urnaus);
+        planetArrayList.add(Uranus);
         planetArrayList.add(Neptune);
 
         adapter = new MyCustomAdapter(this, planetArrayList);
